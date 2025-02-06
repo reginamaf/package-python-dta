@@ -265,7 +265,7 @@ class PostgresAdapter(BaseAdapter):
 
     def __debug(self, query, params, debug=False):
         if debug and self.cursor:
-            logger.log(level='INFO', log=self.cursor.mogrify(query, params))
+            logger.log(level='WARN', log=self.cursor.mogrify(query, params))
 
     def __raise_error(self, error_type, **kwargs):
         if error_type == 'PARAMS_REQUIRED':
